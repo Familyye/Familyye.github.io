@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"> <head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>免费图床 | blhorizonの博客</title><meta name="author" content="blhorizon"><meta name="copyright" content="blhorizon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="1. 基于Github仓库的图床优点：  很稳定不会跑路，用的是自己的仓库和公共托管平台 图片可以增量快速更新和跨设备管理 可以进行版本管理和查看之前的版本 有公共CDN，速度还是不错的 资源格式可以任意都行，包括css、js等  缺点：  每个仓库限制1G，超过要新建另一个仓库 git管理可能偶尔会遇到网络和公钥失效问题   1.1 建立Github仓库 进入 Github官网 注册并登录自己的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="免费图床">
+<meta property="og:url" content="http://blhorizon.github.io/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/index.html">
+<meta property="og:site_name" content="blhorizonの博客">
+<meta property="og:description" content="1. 基于Github仓库的图床优点：  很稳定不会跑路，用的是自己的仓库和公共托管平台 图片可以增量快速更新和跨设备管理 可以进行版本管理和查看之前的版本 有公共CDN，速度还是不错的 资源格式可以任意都行，包括css、js等  缺点：  每个仓库限制1G，超过要新建另一个仓库 git管理可能偶尔会遇到网络和公钥失效问题   1.1 建立Github仓库 进入 Github官网 注册并登录自己的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexoimagesone.pages.dev/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/default_cover_7.png">
+<meta property="article:published_time" content="2023-02-25T09:47:43.000Z">
+<meta property="article:modified_time" content="2023-02-25T12:39:39.473Z">
+<meta property="article:author" content="blhorizon">
+<meta property="article:tag" content="Hexo博客">
+<meta property="article:tag" content="图床">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexoimagesone.pages.dev/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/default_cover_7.png"><link rel="shortcut icon" href="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/favicon.ico"><link rel="canonical" href="http://blhorizon.github.io/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '免费图床',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-25 20:39:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/progress_bar.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/beautify.css"><link rel="stylesheet" href="/css/cat.css"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><span id="fps"></span><div id="myscoll"></div><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-home"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yuedu"></use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags">                   </use></svg><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> 分类</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/default_cover_7.png')"><nav id="nav"><span id="blog-info"><a href="/" title="blhorizonの博客"><span class="site-name">blhorizonの博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-home"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yuedu"></use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags">                   </use></svg><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> 分类</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">免费图床</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-25T09:47:43.000Z" title="发表于 2023-02-25 17:47:43">2023-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-25T12:39:39.473Z" title="更新于 2023-02-25 20:39:39">2023-02-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">Hexo博客搭建</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="免费图床"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs></svg><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="1-基于Github仓库的图床"><a href="#1-基于Github仓库的图床" class="headerlink" title="1. 基于Github仓库的图床"></a>1. 基于Github仓库的图床</h2><div class="note blue icon-padding simple"><i class="note-icon fas fa-bullhorn"></i><p>优点：</p>
+<ol>
+<li>很稳定不会跑路，用的是自己的仓库和公共托管平台</li>
+<li>图片可以增量快速更新和跨设备管理</li>
+<li>可以进行版本管理和查看之前的版本</li>
+<li>有公共CDN，速度还是不错的</li>
+<li>资源格式可以任意都行，包括css、js等</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>每个仓库限制1G，超过要新建另一个仓库</li>
+<li>git管理可能偶尔会遇到网络和公钥失效问题</li>
+</ol>
+</div>
+<h3 id="1-1-建立Github仓库"><a href="#1-1-建立Github仓库" class="headerlink" title="1.1 建立Github仓库"></a>1.1 建立Github仓库</h3><ol>
+<li><p>进入 <a target="_blank" rel="noopener" href="https://github.com/">Github官网</a> 注册并登录自己的账号，到自己的个人主页，点击右上角的<code>+</code>，并选择<code>New Repository</code>创建自己的仓库。其中仓库名字随意，描述也可以自由发挥，可见性最好选<code>public</code>，<code>Readme文件</code>可以创建，然后点击Create Repository创建仓库。</p>
+ <div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><p>需要让你的计算机与Github建立通信，主要是<code>创建公钥</code>、<code>上传公钥</code>、<code>检查通信</code>这几步，确保计算机有权限访问远程仓库，一般是用的<code>RSA公钥</code>，目前更<code>推荐ed25519公钥</code>，该数字签名算法的签名和验证的性能都极⾼，具体教程百度这里不再赘述。</p>
+</div></li>
+<li>先在本地创建一个文件夹，文件夹位置和名字随意就可以，进入该文件夹后右键打开<code>Git Bash</code>，然后输入以下代码把之前创建的仓库拷贝下来，其中<code>git clone</code>后面的东西要替换成自己的仓库信息，可以通过自己仓库的ssh链接来获取。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:blhorizon/ImagesOne.git</span><br></pre></td></tr></table></figure></li>
+<li>在这个文件夹里面创建一个文件夹专门存放图片，如果有存放其他类型资源的可以创建别的文件夹。然后在带有<code>Readme.md</code>文件的那个文件夹内，右键打开<code>Git Bash</code>（注意看清楚是什么文件夹），然后依次输入以下命令把更改推送到远程仓库，最后一步不成功可能要多试几次。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将更改提交</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;更新图片&quot;</span></span><br><span class="line"><span class="comment"># 推送至github仓库</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+最后看见如下信息就代表推送成功了，并且下次增删图片或者其他东西，就这样照猫画虎就可以推上来更新仓库！<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/20230224012540.png" alt=""></li>
+</ol>
+<h3 id="1-2-Staticaly-CDN加速"><a href="#1-2-Staticaly-CDN加速" class="headerlink" title="1.2 Staticaly CDN加速"></a>1.2 Staticaly CDN加速</h3><p>直接访问Github仓库的资源是非常慢的！因此我们要用一些免费的CDN进行加速，<code>Staticaly CDN</code>是目前免费CDN中比较好用的啦，他的应用规则如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 格式 其中 user是用户名  repo是仓库名  version代表版本(tag或者分支 默认为main)  flie是文件路径 </span><br><span class="line">https://cdn.staticaly.com/gh/user/repo@version/file</span><br><span class="line"></span><br><span class="line"># 比如我的示例仓库就是加速地址就是这个大家可以参考参考</span><br><span class="line">https://cdn.staticaly.com/gh/blhorizon/ImagesOne@main/img/p2.webp</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-3-Cloudflare-部署"><a href="#1-3-Cloudflare-部署" class="headerlink" title="1.3 Cloudflare 部署"></a>1.3 Cloudflare 部署</h3><div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><p>此方法速度比Vercel稍慢，但是可以不需要域名，目前我就在用这个，而且CloudFlare对于普通用户来说几乎不限量了</p>
+</div>
+<ol>
+<li><p>进入<a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare官网</a>注册并登录自己的账号，然后进入控制台后选择左边的<code>Pages</code>，再创建一个新项目并通过Git进行连接，所有参数默认直接部署。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/6efefce77f4268d2031d577e0905a480d1111f95.jpg" alt=""></p>
+</li>
+<li><p>通过给出的初始域名+资源路径即可访问到的对应资源，例如我这个就是<code>https://imagesone.pages.dev/xxx.png</code>，当然你也可以绑定自定义域名使用。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/20230224013414.png" alt=""></p>
+</li>
+</ol>
+<h2 id="2-PicGo结合Markdown实时上传图片"><a href="#2-PicGo结合Markdown实时上传图片" class="headerlink" title="2. PicGo结合Markdown实时上传图片"></a>2. PicGo结合Markdown实时上传图片</h2><ol>
+<li><code>Picgo</code>是一个开源软件，开源地址：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">Molunerfinn/PicGo</a>，这是一个用于快速上传图片并获取图片 URL 链接的工具，关键是他可以与Typora配套一起使用，在粘贴图片的同时上传图片，十分方便！</li>
+<li>最新版我这里实测没办法安装一些插件，因此推荐大家安装<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1-beta.5">v2.3.1-beta.5</a>这个版本，建议安装在C盘外<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image.webp" alt=""></li>
+</ol>
+<h3 id="2-1-Github图床"><a href="#2-1-Github图床" class="headerlink" title="2.1 Github图床"></a>2.1 Github图床</h3><ol>
+<li>进入软件之后，一路到设置里面取消勾选其他图床，只留下Github图床一项，因为我们的现在要弄Github图床。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-1.webp" alt=""></li>
+<li>然后到Github新建一个仓库，创建仓库的教程前面有讲，这里就不赘述了，仓库名字和描述随意，<code>最重要的是权限一定要选public</code>，这样你的图片才可以随时随地访问到。在图床设置的Github配置处，按照下图填入对应的信息：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-2.webp" alt=""><br>自定义域名的格式为：<code>https://cdn.staticaly.com/gh/用户名/仓库名@main</code>，比如我的就是<code>https://cdn.staticaly.com/gh/blhorizon/ImagesOne@main</code>，对应的用户名和仓库名记住要换成自己名字，不能有空格！！！<br>Token的获取方式为：<code>右上角头像</code>-&gt;<code>Setting</code>-&gt;<code>左边栏Developer Settings</code>-&gt;<code>左栏Personal access tokens</code>-&gt;<code>左栏tokens(classic)</code><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-3.webp" alt=""><br>创建<code>Token</code>时，<code>Note</code>随意；<code>Exporation</code>选<code>No expiration</code>，<code>Select scopes</code>必须把<code>repo</code>这一项勾上，然后点击生成就行<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-4.webp" alt=""><br>这个时候必须马上复制出现的token，不然后面就看不到了，复制了填进去刚刚的Token选项，随后点击确定保存<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-5.webp" alt=""></li>
+<li>随便拖拽一张图片进来上传区域这里，应该就可以上传成功，随后把生成的链接复制就可以，此时打开仓库可以发现图片上传到了指定的文件夹。注意：<code>每个仓库大小限制是1G</code>！！！<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-6.webp" alt=""></li>
+</ol>
+<h3 id="2-2-Vika图床"><a href="#2-2-Vika图床" class="headerlink" title="2.2 Vika图床"></a>2.2 Vika图床</h3><ol>
+<li>Vika图床的服务器<code>在国内</code>，速度是比较快的；先在Picgo里面安装<code>Vikadata</code>的插件<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-7.webp" alt=""></li>
+<li>我们要填的信息有下面这几项：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/1672391987585.webp" alt=""></li>
+<li>进入<a target="_blank" rel="noopener" href="https://vika.cn/">维格表官网</a>，注册自己的账号并登录，新建一个空白的维格表<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/1672392200825.webp" alt=""></li>
+<li>随后点击左下角头像的个人设置，绑定自己的邮箱后，点击开发者设置获取<code>API Token</code><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/1672392200842.webp" alt=""></li>
+<li>进入刚刚创建的表格后，点击上边的<code>API</code>，进入API界面后，依次点击显示<code>API Token</code>-&gt;<code>Get 获取</code>，然后图中框起来的就是我们需要的<code>维格表ID</code>和<code>API Token</code><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/1672392201560.webp" alt=""><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/1672392249317.webp" alt=""></li>
+</ol>
+<h3 id="2-3-imgtp图床"><a href="#2-3-imgtp图床" class="headerlink" title="2.3 imgtp图床"></a>2.3 imgtp图床</h3><ol>
+<li>在Picg插件商店搜索并安装该插件，该插件的开源地址：<a target="_blank" rel="noopener" href="https://github.com/Redns/picgo-plugin-imgtp">picgo-plugin-imgtp</a><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-8.webp" alt=""></li>
+<li>进入<a target="_blank" rel="noopener" href="https://imgtp.com/">imgtp</a>注册并登录自己的账号，记住账号密码，待会儿要用到</li>
+<li>进入<code>控制台</code>，然后进入<code>设置</code>，就可以看到右边有<code>Token</code>这一项，这些就是我们要的全部信息<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-9.webp" alt=""></li>
+<li>随后在<code>imgtp的配置信息</code>里面填上<code>账号</code>、<code>密码</code>、<code>Token</code>这几项即可<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagesone.pages.dev/免费图床/image-10.webp" alt=""></li>
+<li>填进去对应位置后，到上传区域，把图床换成维格表，试试拖拽图片能不能上传！</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>免费图床</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://blhorizon.github.io/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/">http://blhorizon.github.io/2023/02/25/Hexo博客/免费图床/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>blhorizon</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2023-02-25</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2023-02-25</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/">Hexo博客</a><a class="post-meta__tags" href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a></div><div class="post_share"><div class="social-share" data-image="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/default_cover_7.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85Butterfly%E4%B8%BB%E9%A2%98/" title="Hexo博客安装Butterfly主题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/default_cover_5.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hexo博客安装Butterfly主题</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/" title="快速搭建Hexo博客"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/default_cover_3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">快速搭建Hexo博客</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85Butterfly%E4%B8%BB%E9%A2%98/" title="Hexo博客安装Butterfly主题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/default_cover_5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-25</div><div class="title">Hexo博客安装Butterfly主题</div></div></a></div><div><a href="/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/" title="快速搭建Hexo博客"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/default_cover_3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-25</div><div class="title">快速搭建Hexo博客</div></div></a></div><div><a href="/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="修改Hexo博客相关配置文件"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/default_cover_9.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-25</div><div class="title">修改Hexo博客相关配置文件</div></div></a></div><div><a href="/2023/02/25/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E7%BE%8E%E5%8C%96/" title="Hexo美化"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/default_cover_7.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-25</div><div class="title">Hexo美化</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author_top is-center"><div class="card-info-avatar"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://hexoimagesone.pages.dev/修改Hexo博客相关配置文件/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg">🐟</g-emoji><span>认真摸鱼中</span></div></div></div><div class="author-info__name">blhorizon</div><div class="author-info__description">简简单单の博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/blhorizon"><i class="fab fa-github"></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/blhorizon" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-github"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/41476922" target="_blank" title="哔哩哔哩"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><a class="faa-parent animated-hover"><svg class="faa-tada icon" style="height:25px;width:25px;fill:currentColor;position:relative;top:2px" aria-hidden="true"><use xlink:href="#icon-xinwengonggao"></use></svg></a><span>公告栏</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E4%BA%8EGithub%E4%BB%93%E5%BA%93%E7%9A%84%E5%9B%BE%E5%BA%8A"><span class="toc-text">1. 基于Github仓库的图床</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%BB%BA%E7%AB%8BGithub%E4%BB%93%E5%BA%93"><span class="toc-text">1.1 建立Github仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Staticaly-CDN%E5%8A%A0%E9%80%9F"><span class="toc-text">1.2 Staticaly CDN加速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Cloudflare-%E9%83%A8%E7%BD%B2"><span class="toc-text">1.3 Cloudflare 部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-PicGo%E7%BB%93%E5%90%88Markdown%E5%AE%9E%E6%97%B6%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87"><span class="toc-text">2. PicGo结合Markdown实时上传图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Github%E5%9B%BE%E5%BA%8A"><span class="toc-text">2.1 Github图床</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Vika%E5%9B%BE%E5%BA%8A"><span class="toc-text">2.2 Vika图床</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-imgtp%E5%9B%BE%E5%BA%8A"><span class="toc-text">2.3 imgtp图床</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-color: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2023 By blhorizon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js" type="module"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: '',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: '',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="//at.alicdn.com/t/c/font_3917314_7363e9nfjft.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script src="/js/sun_moon.js" async></script><script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script async src="/js/fps.js"></script><script async src="/js/title.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://blhorizon.github.io/categories/Hexo博客搭建/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 blhorizonのHexo博客搭建 (4)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://blhorizon.github.io/categories/Hexo博客美化/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🎮 blhorizonのHexo博客美化 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://blhorizon.github.io/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
